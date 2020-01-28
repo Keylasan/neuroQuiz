@@ -1,0 +1,15 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+h1 .jumbotron
+{
+text-transform: uppercase;
+
+}
+
+#afterSubmit
+{
+visibility:hidden;
+}

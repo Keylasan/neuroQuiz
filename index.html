@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neuroscience Quiz</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Added link to the jQuery Library -->
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel= "stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="jumbotron">
+
+    <h1 class="text-center">How much do you know about the brain?</h1>
+
+</div>
+
+
+<form id = "neuroQuiz" name =neuroQuiz>
+
+<p>
+ 1. Neurons are the brain cells that do all the work to keep you moving and thinking. Approximately how many neurons does the brain contain?
+</p>
+ 
+ <input type = "radio" id = "multipleChoice" name = first value = "100 billion"> 100 billion<br>
+ <input type = "radio" id = "multipleChoice" name = first value = "100 million"> 100 million<br>
+ <input type = "radio" id = "multipleChoice" name = first value = "360 million"> 360 million<br>
+
+<p>
+  2. The brain can adapt to changes and mold itself to continue functioning in the presence of lesions; for example, it's been seen that neighboring areas will take over the job of an injured part of the brain. What is the neurological term for the brain's ability to undergo changes?
+</p>
+
+<input type = "radio" id = "multipleChoice" name = second value = "Adaptivity"> Adaptivity<br>
+<input type = "radio" id = "multipleChoice" name = second  value = "Plasticity"> Plasticity<br>
+<input type = "radio" id = "multipleChoice" name = second  value = "Maleability"> Maleability<br>
+
+<p>
+  3. As your brain developed during early pregnancy, how fast did your neurons multiply?
+</p>
+
+<input type = "radio" id = "multipleChoice" name = third value = "250,000 per hour">250,000 per hour <br>
+<input type = "radio" id = "multipleChoice" name = third value = "250,000 per day">250,000 per day <br>
+<input type = "radio" id = "multipleChoice" name = third value = "250,000 per minute">250,000 per minute <br>
+
+<p>
+ 4. How fast can information travel in your brain?
+</p>
+
+<input type = "radio" id = "multipleChoice" name = fourth value = "Up to 120 metres per second">Up to 120 meters per second <br>
+<input type = "radio" id = "multipleChoice" name = fourth  value = "Up to 120 metre per minute">Up to 120 metre per minute <br>
+<input type = "radio" id = "multipleChoice" name = fourth value = "Up to 120 metre per hour">Up to 120 metre per hour <br>
+
+<p>
+ 5. What proportion of the oxygen pumped around your body is used by your brain?
+</p>
+
+
+<input type = "radio" id = "multipleChoice" name = fifth value = "10%">10% <br>
+<input type = "radio" id = "multipleChoice" name = fifth value = "20%">20%<br>
+<input type = "radio" id = "multipleChoice" name = fifth value = "30%">30% <br>
+
+<p>
+ 6. How long before you lose consciousness after losing blood supply to your brain?
+</p>
+
+<input type = "radio" id = "multipleChoice" name = sixth value = "10 to 20 seconds">10 to 20 seconds <br>
+<input type = "radio" id = "multipleChoice" name = sixth value = "20 to 25 seconds">20 to 25 seconds<br>
+<input type = "radio" id = "multipleChoice" name = sixth value = "8 to 10 seconds">8 to 10 seconds <br>
+
+
+<!---<input id = "button" value = "How did I do?" onclick= "check();"> --->
+<button id="btn">How did I do?</button>
+
+
+
+</form> 
+
+
+<div id = "afterSubmit">
+    <p id = "message"></p>
+    <p id = "numberCorrect"></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+document.getElementById("btn").addEventListener("click", function(event){
+  event.preventDefault()
+
+
+
+var first = document.neuroQuiz.first.value;
+var second = document.neuroQuiz.second.value;
+var third = document.neuroQuiz.third.value;
+var fourth = document.neuroQuiz.fourth.value;
+var fifth = document.neuroQuiz.fifth.value;
+var sixth = document.neuroQuiz.sixth.value;
+var correct = 0;
+
+if (first == "100 billion")
+{
+    correct++;
+}
+    
+if (second == "Plasticity")
+{
+    correct++;
+}
+
+if (third == "250,000 per minute")
+{
+    correct++;
+}
+
+if (fourth == "Up to 120 metres per second")
+{
+    correct++;
+}
+
+if (fifth == "20%")
+{
+    correct++;
+}
+
+ if (sixth == "8 to 10 seconds")
+ {
+     correct++;
+ }
+
+
+
+//I will message the user according to their score. creating array...
+
+var messages =["Wow! You're a Brainiac! (pun intended)", "Good news is it's over, and I'm sure you'll do better next time!", "Hmm...There's a lot of room for improvement here is all I'm going to say."];
+
+var range = 0;
+
+if (correct < 1)
+{
+    range = 5;
+}
+if (correct > 0 && correct < 6)
+{
+    range = 1;
+}
+if (correct > 5)
+{
+    range = 0;
+} 
+
+document.getElementById("afterSubmit").style.visibility = "visible";
+
+document.getElementById("message").innerHTML = messages[range];
+document.getElementById("numberCorrect").innerHTML = "You got " + " " + correct + " " + "correct.";
+
+
+});
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
