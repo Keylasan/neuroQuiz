@@ -20,7 +20,7 @@
   </div>
 
 <div class= "image">
-  <img src="neuro.jpeg">
+  <img src="pics/neuro.jpeg">
 </div>
 
 
@@ -87,6 +87,7 @@
 <div id = "afterSubmit">
     <p id = "message"></p>
     <p id = "numberCorrect"></p>
+    <img id = "pics">
 </div>
 
 
@@ -153,6 +154,10 @@ if (fifth == "20%")
 var messages =["Wow! You're a Brainiac! (pun intended)","Meh... That's alright, I guess.","Good news is it's over, and I'm sure you'll do better next time!",
 "Hmm...There's a lot of room for improvement here is all I'm going to say."];
 
+var scoreImages =["pics/Brainiac.jpg","pics/justOK.jpg","pics/funnyKid.gif","pics/fail.jpg"];
+
+
+
 var range = 0;
 
 if (correct < 2)
@@ -182,7 +187,7 @@ document.getElementById("afterSubmit").style.visibility = "visible";
 
 document.getElementById("message").innerHTML = messages[range];
 document.getElementById("numberCorrect").innerHTML = "You got " + " " + correct + " " + "correct.";
-
+document.getElementById("pics").src = scoreImages[range];
 
 });
 
