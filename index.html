@@ -150,24 +150,33 @@ if (fifth == "20%")
 
 //I will message the user according to their score. creating array...
 
-var messages =["Wow! You're a Brainiac! (pun intended)", "Good news is it's over, and I'm sure you'll do better next time!", "Hmm...There's a lot of room for improvement here is all I'm going to say."];
+var messages =["Wow! You're a Brainiac! (pun intended)","Meh... That's alright, I guess.","Good news is it's over, and I'm sure you'll do better next time!",
+"Hmm...There's a lot of room for improvement here is all I'm going to say."];
 
 var range = 0;
 
-if (correct < 1)
+if (correct < 2)
 {
-    range = 5;
+    range = 3;
 }
-if (correct > 0 && correct < 5)
+if (correct == 2)
 {
-    range = 1;
+    range = 2;
 }
-if (correct > 5)
+if (correct > 4)
 {
     range = 0;
 } 
+ 
+ if (correct == 3)
+ {
+   range = 1;
+ }
 
-
+ if (correct == 0 )
+ {
+   range = 3; 
+ }
 
 document.getElementById("afterSubmit").style.visibility = "visible";
 
