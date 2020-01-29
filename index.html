@@ -6,19 +6,19 @@
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Added link to the jQuery Library -->
-
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel= "stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="jumbotron" style="background-color:
-  background-color=rgb(212, 218, 212)">
+  <div class="jumbotron" id="jumbo">
     
-    <h1 class="text-center">How much do you know about the brain?</h1>
+    <h1 class="text-center">How much do you know about the human brain?</h1>
 
-</div>
+  </div>
+
 <div class= "image">
   <img src="neuro.jpeg">
 </div>
@@ -99,10 +99,6 @@
 
 
 
-
-
-
-
 <script type="text/javascript">
 
 
@@ -162,7 +158,7 @@ if (correct < 1)
 {
     range = 5;
 }
-if (correct > 0 && correct < 6)
+if (correct > 0 && correct < 5)
 {
     range = 1;
 }
@@ -170,6 +166,8 @@ if (correct > 5)
 {
     range = 0;
 } 
+
+
 
 document.getElementById("afterSubmit").style.visibility = "visible";
 
